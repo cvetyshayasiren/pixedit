@@ -1,0 +1,9 @@
+:root{
+  --bg0:#07091a; --bg1:#0b0e24; --surface:#10142e; --surface2:#161b3a; --inset:#0d1128;
+  --line:#262c55; --line2:#3a4180;
+  --text:#eef0ff; --muted:#9aa3d1; --dim:#6b74a8;
+  --violet:#7c3aed; --violet2:#a78bfa; --magenta:#ff3d8b; --cyan:#29d9ff; --cyan2:#73eff7;
+  --acid:#00e436; --green:#39ff88; --amber:#ffb020; --red:#ff4d5e; --blue:#3b5dc9;
+  --nav-h:64px;
+  --px-clip:polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px));
+}

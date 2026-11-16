@@ -1,0 +1,44 @@
+.stage{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stage-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 14px;border-bottom:1px solid var(--line)}
+.stage-title{font-family:'Press Start 2P',monospace;font-size:11px;color:var(--cyan2)}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--inset);border:1px solid var(--line);
+  border-radius:6px;padding:3px 8px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.chip .sw{width:12px;height:12px;border-radius:3px;border:1px solid rgba(255,255,255,.25);flex:none}
+.zoom-ctl{display:flex;align-items:center;gap:6px;margin-left:auto}
+.zoom-ctl input[type=range]{width:110px}
+.zbtn{width:30px;height:30px;display:grid;place-content:center;border:1px solid var(--line2);border-radius:7px;
+  background:var(--inset);color:var(--muted);cursor:pointer;transition:all .13s;padding:0}
+.zbtn:hover{color:var(--cyan2);border-color:var(--cyan)}
+.zbtn.on{color:var(--acid);border-color:rgba(0,228,54,.5);background:rgba(0,228,54,.08)}
+.zbtn .ic{width:15px;height:15px}
+.zoom-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan2);min-width:36px;text-align:center}
+.stage-area{position:relative;display:flex;overflow:auto;height:clamp(360px,calc(100vh - 330px),720px);
+  background:radial-gradient(900px 480px at 50% 0%,rgba(124,58,237,.09),transparent 70%),var(--bg1);
+  box-shadow:inset 0 0 60px rgba(0,0,0,.45)}
+.corner{position:absolute;width:15px;height:15px;z-index:5;pointer-events:none;opacity:.8}
+.c-tl{top:8px;left:8px;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+.c-tr{top:8px;right:8px;border-top:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+.c-bl{bottom:8px;left:8px;border-bottom:2px solid var(--magenta);border-left:2px solid var(--magenta)}
+.c-br{bottom:8px;right:8px;border-bottom:2px solid var(--magenta);border-right:2px solid var(--magenta)}
+.canvas-wrap{position:relative;margin:auto;flex:none;--cell:12px;
+  background:repeating-conic-gradient(#191e38 0% 25%,#111530 0% 50%) 0 0/calc(var(--cell)*2) calc(var(--cell)*2);
+  box-shadow:0 0 0 1px var(--line2),0 12px 44px rgba(124,58,237,.28),0 4px 18px rgba(0,0,0,.5)}
+.canvas-wrap canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+.canvas-wrap .ov{position:absolute;inset:0;touch-action:none;cursor:crosshair}
+.empty-chip{position:absolute;top:12px;left:34px;z-index:6;pointer-events:none;font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:1px;color:var(--cyan2);background:rgba(13,17,40,.88);border:1px solid var(--line2);
+  border-radius:6px;padding:5px 9px;animation:fadeup .6s .4s backwards}
+.empty-chip .cur{display:inline-block;width:6px;height:10px;background:var(--acid);vertical-align:-1px;margin-left:5px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.stage-status{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 14px;border-top:1px solid var(--line);background:rgba(13,17,40,.5)}
+.stage-status .spacer{flex:1}
+.proc{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber)}
+.proc i{width:6px;height:6px;background:var(--amber);animation:blink .7s steps(2) infinite}
+.proc i:nth-child(2){animation-delay:.18s}.proc i:nth-child(3){animation-delay:.36s}
+.photo-empty{margin:auto;text-align:center;padding:30px;max-width:380px}
+.photo-empty .big-ic{width:96px;height:96px;margin:0 auto 18px;display:block;filter:drop-shadow(0 8px 24px rgba(124,58,237,.4));animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.photo-empty h3{font-family:'Press Start 2P',monospace;font-size:12px;color:var(--violet2);margin-bottom:10px;line-height:1.7}
+.photo-empty p{color:var(--muted);font-size:13px;margin-bottom:16px}
+.crop-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:11px 14px;border-top:1px solid var(--line)}
+.crop-row .hint{flex:1;min-width:180px}

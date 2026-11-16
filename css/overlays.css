@@ -1,0 +1,28 @@
+.toasts{position:fixed;top:calc(var(--nav-h) + 12px);right:16px;z-index:200;display:flex;flex-direction:column;gap:8px;max-width:min(380px,calc(100vw - 24px))}
+.toast{display:flex;align-items:flex-start;gap:10px;background:linear-gradient(180deg,#1a2044,#131737);
+  border:1px solid var(--line2);border-left:3px solid var(--cyan);border-radius:9px;padding:11px 12px;font-size:13px;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);animation:toast-in .25s cubic-bezier(.2,.9,.3,1.2)}
+.toast.out{animation:toast-out .22s forwards}
+@keyframes toast-in{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes toast-out{to{opacity:0;transform:translateX(30px)}}
+.toast .ic{width:16px;height:16px;margin-top:1px}
+.toast span{flex:1;line-height:1.45}
+.toast.t-success{border-left-color:var(--acid)}.toast.t-success>.ic{color:var(--acid)}
+.toast.t-error{border-left-color:var(--red)}.toast.t-error>.ic{color:var(--red)}
+.toast.t-warn{border-left-color:var(--amber)}.toast.t-warn>.ic{color:var(--amber)}
+.toast.t-info{border-left-color:var(--cyan)}.toast.t-info>.ic{color:var(--cyan)}
+.toast-x{border:none;background:none;color:var(--dim);cursor:pointer;padding:1px}
+.toast-x:hover{color:#fff}.toast-x .ic{width:13px;height:13px}
+
+#modalRoot{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px}
+.modal-backdrop{position:absolute;inset:0;background:rgba(4,6,16,.72);backdrop-filter:blur(4px);animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.modal{position:relative;width:min(460px,100%);background:linear-gradient(180deg,#1b2148,#12163a);
+  border:1px solid var(--line2);clip-path:var(--px-clip);padding:24px;animation:pop .22s cubic-bezier(.2,.9,.3,1.15);
+  filter:drop-shadow(0 24px 60px rgba(0,0,0,.6))}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:none}}
+.modal-title{font-family:'Press Start 2P',monospace;font-size:12px;color:var(--cyan2);margin-bottom:14px;line-height:1.7}
+.modal-body{color:var(--muted);font-size:13.5px;line-height:1.6}
+.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px;flex-wrap:wrap}
+.hotkeys{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;align-items:center;margin-top:4px}
+.hotkeys div:nth-child(even){font-size:12.5px}
